@@ -25,18 +25,27 @@ default: game
 # dice.o, game.o:
 #
 game:  dice.o  sort_source.o game.o
+	$(info ******************************************************)
+	$(info ******************************************************)
+	$(info ************  Creating Binary file 'game' ************)
 	$(CC) $(CFLAGS) -o game  dice.o game.o sort_source.o
 
 # To create the object file dice.o, we need the source
 # files dice.h dice.cpp:
 #
-dice.o:  dice.cpp  dice.h 
+dice.o:  dice.cpp  dice.h
+	$(info ******************************************************)
+	$(info ******************************************************)
+	$(info ************  Compiling dice.cpp  ************)
 	$(CC) $(CFLAGS) -c dice.cpp
 
 # To create the object file sort.o, we need the source
 # files sort_header.h sort_source.cpp:
 #
 sort_source.o:  sort_source.cpp  sort_header.h
+	$(info ******************************************************)
+	$(info ******************************************************)
+	$(info ************  Compiling sort_source.cpp  ************)
 	$(CC) $(CFLAGS) -c sort_source.cpp
 
 
@@ -44,6 +53,9 @@ sort_source.o:  sort_source.cpp  sort_header.h
 # game.cpp:
 #
 game.o:  util_file.h game.cpp 
+	$(info ******************************************************)
+	$(info ******************************************************)
+	$(info ************  Compiling game.cpp  ************)
 	$(CC) $(CFLAGS) -c game.cpp
 
 

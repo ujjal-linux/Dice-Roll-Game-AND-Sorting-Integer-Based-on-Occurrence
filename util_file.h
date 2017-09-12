@@ -37,6 +37,52 @@ void clear_screen()
 }
 
 
+/* Function for input  the integer data
+*  This function also check for the validation  
+*
+*  @param : NONE 
+*
+*  @return : NONE 
+*/
+int getInt()
+{
+     int x=0;
+     bool flag =false;
+
+     cin.clear();
+     cin.ignore(numeric_limits<streamsize>::max(),'\n');
+     
+     while (!flag)
+     {
+       if (!(cin >> x))
+       {
+         cin.clear();
+         cin.ignore(numeric_limits<streamsize>::max(),'\n');
+         cout << "Please input a proper 'whole Positive number' number: " << endl;
+         continue;
+       }
+       else if ( !isspace(cin.peek()) )
+       {   
+         cin.clear();
+         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n') ;
+         cout << "Please input a proper 'whole Positive number' number: " << endl;
+         continue;
+       }
+      
+       if ( 0 > x )
+       {
+         cin.clear();
+         cin.ignore(numeric_limits<streamsize>::max(),'\n');
+         cout << "Please input a proper 'whole Positive number' number: " << endl;
+         continue;
+       }
+       else
+          flag=true;	
+     }
+     return (x);
+}
+
+
 /* Function to Play the Dice Game  
 *  This function has to be extended for all the platform 
 *
@@ -56,11 +102,11 @@ void Play_Dice_Game ()
 
         /* Input for the number of player/Dice */
         std::cout << "\n Enter the number of Dices you want to play with: ";
-        std::cin >> no_of_player_input;
+        no_of_player_input = getInt();
 
         /* Input for the number of Simulation */
         std::cout << "\n Enter the number of Simulation you want : " ;
-        std::cin >> no_of_iteration;
+        no_of_iteration = getInt();
 
         /* Input for the Logging enable in File/Syslog */
         std::cout << "\n Do you want to enable the log ? (press Y/y for [Yes] OR anykey for [NO]) : " ;
