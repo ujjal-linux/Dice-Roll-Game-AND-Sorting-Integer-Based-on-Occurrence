@@ -1,0 +1,14 @@
+Enter any number between 1 to 10 
+ [0 to end ] && [ANY OTHER NUMBER,Negative Integer ,character  WILL BE DISCAREDED ] : 
+ 2 3 4 5 4 5 3 6 7 5 2 4 5 6 1 2 4 5 6 0
+===================================================== 
+The stored value are : 
+2 3 4 5 4 5 3 6 7 5 2 4 5 6 1 2 4 5 6 
+===================================================== 
+ 
+ The Final Result Sorted  based on Occurence :   
+ 1 7 3 3 2 2 2 6 6 6 4 4 4 4 5 5 5 5 5 
+===================================================== 
+
+Press ENTER to continue...
+
